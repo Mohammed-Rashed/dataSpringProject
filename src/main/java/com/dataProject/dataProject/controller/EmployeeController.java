@@ -3,10 +3,7 @@ package com.dataProject.dataProject.controller;
 import com.dataProject.dataProject.model.entity.Employee;
 import com.dataProject.dataProject.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("employees")
@@ -16,7 +13,11 @@ public class EmployeeController {
     private EmpService empService;
 
     @GetMapping("/find")
-    public Employee getUser(@RequestParam Integer id){
+    public Employee find(@RequestParam Integer id){
         return empService.getEmployeeById(id);
+    }
+    @PostMapping("/save")
+    public Employee save(@RequestBody Employee employee){
+        return empService.save(employee);
     }
 }

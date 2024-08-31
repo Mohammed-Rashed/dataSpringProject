@@ -20,4 +20,8 @@ public class EmpService {
         Optional<Employee> emp= this.empRepo.findById(id);
         return emp.orElse(new Employee());
     }
+    public Employee save(Employee employee) {
+        return this.empRepo.save(employee);
+    }
+
 }
