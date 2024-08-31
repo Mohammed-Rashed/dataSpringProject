@@ -20,4 +20,8 @@ public class EmployeeController {
     public Employee save(@RequestBody Employee employee){
         return empService.save(employee);
     }
+    @GetMapping("/delete")
+    public void save(@RequestParam Integer id){
+         empService.delete(id);
+    }
 }

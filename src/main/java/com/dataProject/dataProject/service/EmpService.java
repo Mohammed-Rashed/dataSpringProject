@@ -23,5 +23,8 @@ public class EmpService {
     public Employee save(Employee employee) {
         return this.empRepo.save(employee);
     }
+    public void delete(Integer id) {
+         this.empRepo.deleteById(id);
+    }
 
 }
